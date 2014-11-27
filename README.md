@@ -8,24 +8,24 @@
 3. Run the cluster manager (will be provided!)
 
     <pre>
-    > cd <spark directory>
+    > cd &lt;spark directory&gt;
     > ./sbin/start-master.sh
     </pre>
 
 4. Run worker connected to the cluster manager
 
     <pre>
-    > cd <spark directory>
-    > ./bin/spark-class org.apache.spark.deploy.worker.Worker spark://<cluster manager ip>:7077
+    > cd &lt;spark directory&gt;
+    > ./bin/spark-class org.apache.spark.deploy.worker.Worker spark://&lt;cluster manager ip&gt;:7077
     </pre>
 
 5. Compile and run SimpleMapReduce example
 
     <pre>
-    > cd <this project root>
+    > cd &lt;project root&gt;
     > sbt package
-    > <spark directory>/bin/spark-submit --class boldradius.spark.examples.SimpleMapReduce \
-      --master spark://<cluster manager ip>:7077 target/scala-2.10/spark_examples_2.10-1.0.jar
+    > &lt;spark directory&gt;/bin/spark-submit --class boldradius.spark.examples.SimpleMapReduce \
+      --master spark://&lt;cluster manager ip&gt;:7077 target/scala-2.10/spark_examples_2.10-1.0.jar
     </pre>
 
 To run other examples use:
